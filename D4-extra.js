@@ -8,66 +8,99 @@ ASSIGNMENT RULES
 You can use the bash terminal, the VSCode terminal or the one embedded in your Operating System if you're using macOS or Linux.
 */
 
+const drawHeader = function (heading) {
+  console.log(
+    `\n-------------------------< ${heading.toUpperCase()} >-----------------------------\n`
+  )
+}
+
 /* EXERCISE 1
 Write the code to revert an array.
 es:
 [1, 3, 5] ==> [5, 3, 1]
 */
 
-/* WRITE YOUR CODE HERE */
-console.log("\n----------------------< EXERCISE 1 >-------------------------------\n");
+drawHeader("EXERCISE 1")
 let array = ["Hey", "how", "are", "you"]
-let reversedArray = array.reverse();
-console.log(reversedArray);
+let reversedArray = array.reverse()
+console.log(reversedArray)
 
 /* EXERCISE 2
 Write the code to get the maximum value in an array.
 */
 
-/* WRITE YOUR CODE HERE */
-console.log("\n----------------------< EXERCISE 2 >-------------------------------\n");
-let numbers = [21, 545, 12, 74, 54541, 55, 784];
-let maximumValue = Math.max(...numbers);
-console.log(maximumValue);
+drawHeader("EXERCISE 2")
+let numbers = [21, 545, 12, 74, 54541, 55, 784]
+let maximumValue = Math.max(...numbers)
+console.log(maximumValue)
 
 /* EXERCISE 3
 Write the code to get the minimum value in an array.
 */
 
-/* WRITE YOUR CODE HERE */
-console.log("\n----------------------< EXERCISE 3 >-------------------------------\n");
-let minimumValue = Math.min(...numbers);
-console.log(minimumValue);
+drawHeader("EXERCISE 3")
+let minimumValue = Math.min(...numbers)
+console.log(minimumValue)
 
 /* EXERCISE 4
 Write the code to get only even numerical values in an array.
 */
 
-/* WRITE YOUR CODE HERE */
-console.log("\n----------------------< EXERCISE 4 >-------------------------------\n");
-let evenNumbers = [];
+drawHeader("EXERCISE 4")
+let evenNumbers = []
 for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 === 0) {
-        evenNumbers.push(numbers[i]);
-    }
+  if (numbers[i] % 2 === 0) {
+    evenNumbers.push(numbers[i])
+  }
 }
 
-console.log(evenNumbers);
-
-
+console.log(evenNumbers)
 
 /* EXERCISE 5
 Write the code to delete even entries from an array.
 */
+drawHeader("EXERCISE 5")
 
-/* WRITE YOUR CODE HERE */
+const randomNumbers = [21, 5454, 77, 8, 9523, 54, 6, 8]
+const oddNumbers = []
 
+for (let i = 0; i < randomNumbers.length; i++) {
+  if (randomNumbers[i] % 2 === 0) {
+    randomNumbers.splice(i, 1, "delete")
+  }
+}
+
+for (let i = 0; i < randomNumbers.length; i++) {
+  if (randomNumbers[i] !== "delete") {
+    oddNumbers.push(randomNumbers[i])
+  }
+}
+console.log(oddNumbers)
 /* EXERCISE 6
 Write the code to remove all the vowels from a string.
 */
+drawHeader("EXERCISE 6")
+const toFly = "I believe I can fly."
+const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+const toFlyArray = toFly.split("")
+const toFlyConsonantsArray = []
 
-/* WRITE YOUR CODE HERE */
+for (let i = 0; i < toFlyArray.length; i++) {
+  for (let j = 0; j < vowels.length; j++) {
+    if (toFlyArray[i] === vowels[j]) {
+      toFlyArray.splice(i, 1, "delete")
+    }
+  }
+}
 
+for (let i = 0; i < toFlyArray.length; i++) {
+  if (toFlyArray[i] !== "delete") {
+    toFlyConsonantsArray.push(toFlyArray[i])
+  }
+}
+
+const toFlyConsonants = toFlyConsonantsArray.join("")
+console.log(toFlyConsonants)
 /* EXERCISE 7
 Write the code to increase all the numeric values in a array by 1.
 */
