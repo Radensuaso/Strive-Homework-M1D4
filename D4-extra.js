@@ -62,20 +62,15 @@ Write the code to delete even entries from an array.
 drawHeader("EXERCISE 5")
 
 const randomNumbers = [21, 5454, 77, 8, 9523, 54, 6, 8]
-const oddNumbers = []
 
 for (let i = 0; i < randomNumbers.length; i++) {
   if (randomNumbers[i] % 2 === 0) {
-    randomNumbers.splice(i, 1, "delete")
+    randomNumbers.splice(i, 1)
+    i--
   }
 }
 
-for (let i = 0; i < randomNumbers.length; i++) {
-  if (randomNumbers[i] !== "delete") {
-    oddNumbers.push(randomNumbers[i])
-  }
-}
-console.log(oddNumbers)
+console.log(randomNumbers)
 /* EXERCISE 6
 Write the code to remove all the vowels from a string.
 */
@@ -83,23 +78,17 @@ drawHeader("EXERCISE 6")
 const toFly = "I believe I can fly."
 const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
 const toFlyArray = toFly.split("")
-const toFlyConsonantsArray = []
 
 for (let i = 0; i < toFlyArray.length; i++) {
   for (let j = 0; j < vowels.length; j++) {
     if (toFlyArray[i] === vowels[j]) {
-      toFlyArray.splice(i, 1, "delete")
+      toFlyArray.splice(i, 1)
+      i--
     }
   }
 }
 
-for (let i = 0; i < toFlyArray.length; i++) {
-  if (toFlyArray[i] !== "delete") {
-    toFlyConsonantsArray.push(toFlyArray[i])
-  }
-}
-
-const toFlyConsonants = toFlyConsonantsArray.join("")
+const toFlyConsonants = toFlyArray.join("")
 console.log(toFlyConsonants)
 /* EXERCISE 7
 Write the code to increase all the numeric values in a array by 1.
@@ -109,7 +98,7 @@ drawHeader("EXERCISE 7")
 const numbersToIncrease = [21, 45, 2, 68]
 
 for (let i = 0; i < numbersToIncrease.length; i++) {
-  numbersToIncrease.splice(i, 1, numbersToIncrease[i] + 1)
+  numbersToIncrease[i]++
 }
 
 console.log(numbersToIncrease)
@@ -122,7 +111,7 @@ drawHeader("EXERCISE 8")
 const toYoung = ["I", "was", "too", "young"]
 
 for (let i = 0; i < toYoung.length; i++) {
-  toYoung.splice(i, 1, toYoung[i].length)
+  toYoung[i] = toYoung[i].length
 }
 
 console.log(toYoung)
