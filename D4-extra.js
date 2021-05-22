@@ -105,14 +105,27 @@ console.log(toFlyConsonants)
 Write the code to increase all the numeric values in a array by 1.
 */
 
-/* WRITE YOUR CODE HERE */
+drawHeader("EXERCISE 7")
+const numbersToIncrease = [21, 45, 2, 68]
 
+for (let i = 0; i < numbersToIncrease.length; i++) {
+  numbersToIncrease.splice(i, 1, numbersToIncrease[i] + 1)
+}
+
+console.log(numbersToIncrease)
 /* EXERCISE 8 
 Replace all the strings in an array with their length.
 es.: ["strive", "is", "great"] => [6, 2, 5]
 */
 
-/* WRITE YOUR CODE HERE */
+drawHeader("EXERCISE 8")
+const toYoung = ["I", "was", "too", "young"]
+
+for (let i = 0; i < toYoung.length; i++) {
+  toYoung.splice(i, 1, toYoung[i].length)
+}
+
+console.log(toYoung)
 
 /* WHEN YOU ARE FINISHED
 Send the code on the Eduflow platform. In the next days we'll also learn how to use GIT
